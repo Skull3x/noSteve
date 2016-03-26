@@ -1,0 +1,5 @@
+name: noSteve
+main: mcunderground\nosteve\Main
+author: MCUnderground
+version: 1.0.0
+api: [2.0.0]
