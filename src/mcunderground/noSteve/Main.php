@@ -23,7 +23,8 @@ class Main extends PluginBase implements Listener {
 $player = $event->getPlayer(); 
 $name = $player->getName();
 if($name == "Steve"){
-$player->kick(Color::RED . "User your username, not Steve",False);
+$player->kick(Color::RED . "Use your username, not Steve",false);
+$event->setCancelled();
 }
 }
 
