@@ -1,5 +1,5 @@
-name: noSteve
-main: mcunderground\nosteve\Main
-author: MCUnderground
+name: NoSteve
+main: LostTeam\NoSteve\Main
+author: LostTeam
 version: 1.0.0
-api: [2.0.0]
+api: [1.13.1, 2.0.0]
