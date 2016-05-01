@@ -10,19 +10,22 @@ use pocketmine\Player;
 use pocketmine\event\player\PlayerPreLoginEvent;
 
 class Main extends PluginBase implements Listener {
+  $this->getPlugin = $this->getOwner();
+  $this->cfg = $this->getPlugin->getConfig->getAll();
+  $message = $this->cfg[message];
 
   public function onEnable() {
     $this->getServer()->getPluginManager()->registerEvents($this, $this);
-    $this->getLogger()->notice(Color::GREEN."Enabled!");
+    $this->getLogger()->notice(Color::GREEN."NoSteve Enabled!");
   }
   public function onJoin(PlayerPreLoginEvent $event) {
     $name=$event->getPlayer()->getName();
     if($name=="Steve") {
-      $player->kick(Color::RED . "Please change your username. Don't use Steve.",false);
-      $event->setCancelled();
+      $player->close(Color::RED . $this->plugin->getConfig, $message);
+      $event->setCancelled(true);
     }
   }
   public function onDisable() {
-    $this->getLogger()->notice(Color::GREEN."Disabled!");
+    $this->getLogger()->notice(Color::GREEN."NoSteve disabled!");
   }
 }
